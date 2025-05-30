@@ -388,12 +388,12 @@ html {
 
 .config-info {
   font-size: 14px;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.6;
   width: 100%;
   margin-top: 40px;
   position: relative;
-  top: 220px;
+  top: 240px;
   z-index: 2;
 }
 
