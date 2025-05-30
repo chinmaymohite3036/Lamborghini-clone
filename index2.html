@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lamborghini</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <!-- Left Section -->
+        <div class="nav-left">
+          <div class="logo"></div>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-links">
+            <li class="models-dropdown">
+              <a href="#">MODELS</a>
+              <ul class="models-menu">
+                <li><a href="#">TEMERARIO</a></li>
+                <li><a href="#">REVUELTO</a></li>
+                <li><a href="#">URUS</a></li>
+                <li><a href="#">HURACÁN</a></li>
+                <li><a href="#">PRE-OWNED</a></li>
+                <li><a href="#">LIMITED SERIES</a></li>
+                <li><a href="#">CONCEPT</a></li>
+              </ul>
+            </li>
+            <li><a href="#">BEYOND</a></li>
+            <li class="ownership-dropdown">
+              <a href="#">OWNERSHIP</a>
+              <ul class="ownership-menu">
+                <li><a href="#">CONNECTIVITY</a></li>
+                <li><a href="#">CUSTOMER APP</a></li>
+                <li><a href="#">MOBILITY PROGRAM</a></li>
+                <li><a href="#">CLASSICS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">RECALL CAMPAIGN</a></li>
+              </ul>
+            </li>
+            <li class="motorsport-dropdown">
+              <a href="#">MOTORSPORT</a>
+              <ul class="motorsport-menu">
+                <li><a href="#">GTP</a></li>
+                <li><a href="#">SUPER TROFEO</a></li>
+                <li><a href="#">GT3</a></li>
+                <li><a href="#">MOTORSPORT MODELS</a></li>
+                <li><a href="#">DRIVERS</a></li>
+                <li><a href="#">MOTORSPORT NEWS</a></li>
+                <li><a href="#">EXPERIENCE</a></li>
+                <li><a href="#">ESPORTS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Section -->
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#">DEALERSHIPS</a></li>
+            <li><a href="#">MUSEUM</a></li>
+            <li><a href="#">STORE</a></li>
+          </ul>
+          <div class="nav-icons">
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero">
+      <video class="hero-video" autoplay muted>
+        <source src="assets/andreahero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content" id="hero-text">
+        <h1>THE REDZONE WITH CALDARELLI</h1>
+        <p>
+          TEMPORARIO: <br />
+          BEYOND<br />
+          THE LIMIT
+        </p>
+      </div>
+
+      <div class="hero-buttons">
+        <button id="prevBtn">⟨</button>
+        <button id="nextBtn">⟩</button>
+      </div>
+    </section>
+
+    <div class="models-section">
+      <div class="model-slide slide-visible">
+        <img src="assets/huracan.png" alt="Huracan" />
+        <div class="model-content">
+          <h1>HURACÁN</h1>
+          <p>BEYOND THE CONCRETE</p>
+          <div class="explore-btn">+<span>Explore the model</span></div>
+        </div>
+      </div>
+
+      <div class="model-slide slide-hidden">
+        <img src="assets/revuelto.png" alt="Revuelto" />
+        <div class="model-content">
+          <h1>REVUELTO</h1>
+          <p>FROM NOW ON</p>
+          <div class="explore-btn">+<span>Explore the model</span></div>
+        </div>
+      </div>
+
+      <div class="model-slide slide-hidden">
+        <img src="assets/urus.png" alt="Urus" />
+        <div class="model-content">
+          <h1>URUS</h1>
+          <p>DARE TO LIVE MORE</p>
+          <div class="explore-btn">+<span>Explore the model</span></div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="prev">&#8249;</button>
+        <button id="next">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="config-section">
+      <div class="config-slide">
+        <div class="config-content">
+          <h2>CONFIGURATOR</h2>
+          <div class="config-title">
+            <h1>CREATE YOUR</h1>
+            <h1>TEMERARIO</h1>
+          </div>
+          <div class="model-selector">
+            <button class="model-btn selected">Temerario</button>
+            <button class="model-btn">Revuelto</button>
+            <button class="model-btn">Urus</button>
+          </div>
+          <p class="config-info">
+            The vehicle is not yet offered for sale and is therefore not subject
+            to Directive 1999/94/EC. The fuel consumption and emissions data is
+            in the type approval stage
+          </p>
+        </div>
+        <img
+          src="assets/temerario-config.png"
+          alt="Temerario"
+          class="config-car"
+        />
+      </div>
+      <div class="config-slide active">
+        <div class="config-content">
+          <h2>CONFIGURATOR</h2>
+          <div class="config-title">
+            <h1>CREATE YOUR</h1>
+            <h1>REVUELTO</h1>
+          </div>
+          <div class="model-selector">
+            <button class="model-btn">Temerario</button>
+            <button class="model-btn selected">Revuelto</button>
+            <button class="model-btn">Urus</button>
+          </div>
+          <p class="config-info">
+            Combined energy consumption: 10,1 kWh/100 Km plus 11,86 l/100km;
+            Combined CO2 emissions: 276 g/km; Combined CO2 efficiency class: G;
+            CO2 class with discharged battery: G; Combined fuel consumption with
+            discharged battery: 17,8 l/100km
+          </p>
+        </div>
+        <img
+          src="assets/revuelto-config.png"
+          alt="Revuelto"
+          class="config-car"
+        />
+      </div>
+      <div class="config-slide">
+        <div class="config-content">
+          <h2>CONFIGURATOR</h2>
+          <div class="config-title">
+            <h1>CREATE YOUR</h1>
+            <h1>URUS</h1>
+          </div>
+          <div class="model-selector">
+            <button class="model-btn">Temerario</button>
+            <button class="model-btn">Revuelto</button>
+            <button class="model-btn selected">Urus</button>
+          </div>
+          <p class="config-info">
+            Urus Performante, Urus S, Urus SE: Combined energy consumption: 39,5
+            kWh/100 Km plus 14,1-2,08 l/100km; Combined CO2 emissions: 320-51,25
+            g/km; Combined CO2 efficiency class: B-G; Combined fuel consumption
+            with discharged battery: 12,9 l/100km; CO2 class with discharged
+            battery: G
+          </p>
+        </div>
+        <img src="assets/urus-config.png" alt="Urus" class="config-car" />
+      </div>
+    </div>
+
+    <footer class="footer-panel">
+      <div class="footer-links">
+        <a href="#">COMPANY</a>
+        <a href="#">FINANCIALS</a>
+        <a href="#">CAREERS</a>
+        <a href="#">CONTACT US</a>
+        <a href="#">SUSTAINABILITY</a>
+        <a href="#">MEDIA CENTER</a>
+        <a href="#">PRIVACY & LEGAL</a>
+        <a href="#">COOKIE SETTINGS</a>
+        <a href="#">SITEMAP</a>
+        <a href="#">NEWSLETTER</a>
+        <a href="#">ACCESSIBILITY</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-weibo"></i></a>
+        <a href="#"><i class="fas fa-play-circle"></i></a>
+        <a href="#"><i class="fab fa-weixin"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

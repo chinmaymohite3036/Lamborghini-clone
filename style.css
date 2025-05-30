@@ -1,0 +1,891 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+/* Nav Bar Styling */
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 85px;
+  background-color: #181818;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 100;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  margin-left: 15px;
+  color: white;
+  font-size: 12.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* distance below the text */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.5s ease;
+}
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-icons a {
+  color: white;
+  margin-left: 25px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-icons a:hover,
+.nav-links li a:hover {
+  color: #8e8e8e;
+}
+
+.logo {
+  background-image: url(assets/logo_header_01.svg);
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Hero Video Section */
+.hero {
+  margin-top: 100px;
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  margin-left: 50px;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  margin: 5px 0;
+  font-weight: 600;
+  line-height: 1.1;
+  animation: slideInFromLeft 1s ease forwards;
+}
+
+.hero-content p {
+  font-size: 80px;
+  margin-top: 80px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  animation: positionAnimate 1s ease 1s 1 forwards;
+  opacity: 0;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-buttons {
+  position: absolute;
+  bottom: 150px;
+  left: 9%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+
+.hero-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 12px 18px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.models-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.model-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.model-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.model-content {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  padding: 40px 80px;
+  width: 700px;
+}
+
+.model-content h1 {
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.model-content p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.slide-hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 0;
+}
+
+.slide-visible {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+.explore-btn {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.explore-btn span {
+  margin-left: 10px;
+}
+
+.model-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.model-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-buttons {
+  position: absolute;
+  top: 25%;
+  left: 80px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.nav-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 12px 18px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.config-section {
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  height: 706px;
+  overflow: hidden;
+}
+
+.config-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.config-slide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.config-car {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.config-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px;
+}
+
+.config-content h2 {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.config-title {
+  margin: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.config-title h1 {
+  font-size: 64px;
+  color: #000000;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.model-selector {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.model-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #cdcdcd;
+  cursor: pointer;
+  padding: 5px 0;
+  position: relative;
+}
+
+.model-btn.selected {
+  color: #000;
+}
+
+.model-btn.selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.config-info {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.6;
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+  top: 220px;
+  z-index: 2;
+}
+
+.footer-panel {
+  background: #181818;
+  color: #fff;
+  padding: 32px 0 24px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-top: 2px solid #fff;
+}
+
+.footer-links {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  margin-left: 60px;
+  font-size: 10px;
+}
+
+.footer-links a:hover {
+  color: #8e8e8e;
+}
+
+.footer-links a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-weight: 400;
+  transition: color 0.2s;
+  padding-bottom: 2px; /* for spacing */
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-links a:hover {
+  color: #8e8e8e;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+  background: #8e8e8e;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+  margin-right: 60px;
+  font-size: 26px;
+}
+
+.footer-social a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #8e8e8e;
+}
+
+.footer-social .fa-youtube {
+  width: 0.9em;
+  margin-right: -15px;
+  text-align: center;
+}
+
+.models-dropdown {
+  position: relative;
+}
+
+.models-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #181818;
+  min-width: 200px;
+  padding: 20px 0;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.models-dropdown:hover .models-menu,
+.models-dropdown:focus-within .models-menu {
+  display: block;
+}
+
+.models-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.models-menu a {
+  display: block;
+  color: #8e8e8e;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 12px 32px;
+  transition: color 0.3s, background 0.3s;
+  letter-spacing: 1px;
+}
+
+.models-menu a:hover {
+  color: #fff;
+  background: #222;
+}
+
+.ownership-dropdown {
+  position: relative;
+}
+
+.ownership-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #181818;
+  min-width: 240px;
+  padding: 20px 0;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.ownership-dropdown:hover .ownership-menu,
+.ownership-dropdown:focus-within .ownership-menu {
+  display: block;
+}
+
+.ownership-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ownership-menu a {
+  display: block;
+  color: #8e8e8e;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 12px 32px;
+  transition: color 0.3s, background 0.3s;
+  letter-spacing: 1px;
+}
+
+.ownership-menu a:hover {
+  color: #fff;
+  background: #222;
+}
+
+.motorsport-dropdown {
+  position: relative;
+}
+
+.motorsport-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #181818;
+  min-width: 240px;
+  padding: 20px 0;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.motorsport-dropdown:hover .motorsport-menu,
+.motorsport-dropdown:focus-within .motorsport-menu {
+  display: block;
+}
+
+.motorsport-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.motorsport-menu a {
+  display: block;
+  color: #8e8e8e;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 12px 32px;
+  transition: color 0.3s, background 0.3s;
+  letter-spacing: 1px;
+}
+
+.motorsport-menu a:hover {
+  color: #fff;
+  background: #222;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Navbar Mobile Styles */
+  .navbar {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-right .nav-links {
+    display: none;
+  }
+
+  .nav-icons {
+    margin-left: 15px;
+  }
+
+  .nav-icons a {
+    margin-left: 15px;
+    font-size: 18px;
+  }
+
+  /* Hero Section Mobile Styles */
+  .hero {
+    margin-top: 60px;
+    height: 400px;
+  }
+
+  .hero-video {
+    height: 400px;
+  }
+
+  .hero-content {
+    margin-left: 20px;
+    top: 40%;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  .hero-buttons {
+    bottom: 100px;
+    left: 50%;
+  }
+
+  /* Models Section Mobile Styles */
+  .models-section {
+    height: 100vh;
+    position: relative;
+  }
+
+  .model-slide {
+    height: 100%;
+  }
+
+  .model-slide img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .model-content {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+    top: 50%;
+  }
+
+  .model-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .model-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .explore-btn {
+    margin: 20px auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .nav-buttons {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    top: auto;
+  }
+
+  .nav-buttons button {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  /* Config Section Mobile Styles */
+  .config-section {
+    height: auto;
+    min-height: 706px;
+  }
+
+  .config-content {
+    padding: 40px 20px;
+  }
+
+  .config-title h1 {
+    font-size: 40px;
+  }
+
+  .model-selector {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .model-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .config-info {
+    font-size: 12px;
+    padding: 0 20px;
+    top: 150px;
+  }
+
+  .config-car {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* Footer Mobile Styles */
+  .footer-panel {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer-links {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-social {
+    margin: 20px 0 0 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Mobile Menu Styles */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #181818;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .nav-links.active li {
+    margin: 10px 0;
+  }
+
+  .models-menu,
+  .ownership-menu,
+  .motorsport-menu {
+    position: static;
+    display: none;
+    background: #222;
+    padding: 10px 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .models-dropdown:hover .models-menu,
+  .ownership-dropdown:hover .ownership-menu,
+  .motorsport-dropdown:hover .motorsport-menu {
+    display: block;
+  }
+
+  .models-menu li,
+  .ownership-menu li,
+  .motorsport-menu li {
+    padding: 8px 0;
+  }
+
+  .models-menu a,
+  .ownership-menu a,
+  .motorsport-menu a {
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 56px;
+  }
+
+  .model-content {
+    left: 50%;
+    width: 80%;
+  }
+
+  .config-content {
+    padding: 60px;
+  }
+
+  .config-title h1 {
+    font-size: 48px;
+  }
+}
+
+/* Add a mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Mobile Menu Styles */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #181818;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .nav-links.active li {
+    margin: 10px 0;
+  }
+
+  .models-menu,
+  .ownership-menu,
+  .motorsport-menu {
+    position: static;
+    display: none;
+    background: #222;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+
+  .models-dropdown:hover .models-menu,
+  .ownership-dropdown:hover .ownership-menu,
+  .motorsport-dropdown:hover .motorsport-menu {
+    display: block;
+  }
+}
